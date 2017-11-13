@@ -50,10 +50,17 @@ public class SocketService {
 
             System.out.println("准备发送数据");
 
+            int i = 0;
+
             while ((weatherDataLine = txtbr.readLine()) != null) {
+                i += 1;
                 weatherDataLine = weatherDataLine.replace(" ", "");
                 writer.println(weatherDataLine);
-                writer.flush();
+
+                if (i >= 10) {
+                    writer.flush();
+                }
+
             }
 
             //5、关闭资源
