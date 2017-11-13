@@ -14,7 +14,7 @@ public class SocketService {
             ServerSocket server = null;
             try {
                 server = new ServerSocket(9999);
-                //b)指定绑定的端口，并监听此端口。
+                //指定绑定的端口，并监听此端口。
                 System.out.println("服务器启动成功");
                 //创建一个ServerSocket在端口9999监听客户请求
             } catch (Exception e) {

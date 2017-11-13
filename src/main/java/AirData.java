@@ -27,29 +27,36 @@ public class AirData {
         this.o3 = o3;
     }
 
-    public void checkAbnormalData(){
-        if(this.pm25 >= 150){
-            printAbnormalData("PM2.5|" + this.pm25);
-        }
-        if(this.pm10 >= 350){
-            printAbnormalData("PM10|" + this.pm10);
-        }
-        if(this.so2 >= 800){
-            printAbnormalData("SO2|" + this.so2);
-        }
-        if(this.co >= 60){
-            printAbnormalData("CO|" + this.co);
-        }
-        if(this.no2 >= 1200){
-            printAbnormalData("NO2|" + this.no2);
-        }
-        if(this.o3 >= 400){
-            printAbnormalData("O3|" + this.o3);
-        }
+    public String getTime() {
+        return time;
     }
 
-    private void printAbnormalData(String abnormalData){
-        System.out.println(this.time + "|" + this.id + "|" + abnormalData);
+    public String getId() {
+        return id;
+    }
+
+    public int getPm25() {
+        return pm25;
+    }
+
+    public int getPm10() {
+        return pm10;
+    }
+
+    public int getSo2() {
+        return so2;
+    }
+
+    public int getCo() {
+        return co;
+    }
+
+    public int getNo2() {
+        return no2;
+    }
+
+    public int getO3() {
+        return o3;
     }
 
 }

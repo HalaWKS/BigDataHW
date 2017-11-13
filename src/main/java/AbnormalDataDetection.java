@@ -22,7 +22,7 @@ public class AbnormalDataDetection {
             List<String> dataList = rdd.collect();
             for (String data : dataList){
                 String [] airQuality = data.split(",");
-                if(data.length() > 7){
+                if(data.length() >= 8){
                     AirData airdata  = new AirData(
                             airQuality[0],
                             airQuality[1],
@@ -32,7 +32,9 @@ public class AbnormalDataDetection {
                             Integer.parseInt(airQuality[5]),
                             Integer.parseInt(airQuality[6]),
                             Integer.parseInt(airQuality[7]));
-                    airdata.checkAbnormalData();
+                    AirDataMonitor.checkAbnormalData(airdata);
+                } else {
+                    System.out.println("miss some data");
                 }
             }
 
